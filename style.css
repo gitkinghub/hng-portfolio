@@ -64,14 +64,34 @@ section {
 }
 
 
-a {
+.links a {
     display: block;
     margin: 0.5em 0;
     color: #0066cc;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
 }
-a:hover {
-    text-decoration: underline;
+
+.links a::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: -100%;
+    background-color: #0066cc;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.links a:hover {
+    color: #ff6600;
+}
+
+.links a:hover::before {
+    visibility: visible;
+    left: 0;
 }
 
 /* Media Queries */
