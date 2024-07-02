@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update current time in UTC
   function updateTime() {
     const now = new Date();
+    const utcTime = now.toUTCString().slice(-12, -4); // Extracts only the time portion
     document.querySelector('[data-testid="currentTimeUTC"]').textContent =
-      now.toUTCString();
+      utcTime;
   }
 
   // Update current day of the week
